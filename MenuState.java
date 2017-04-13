@@ -47,7 +47,7 @@ public class MenuState extends GameState {
 		
 		Content.drawString(g, options[0], 44, 70);
 		Content.drawString(g, options[1], 48, 80);
-		Content.drawString(g, options[2], 5, 90); //Display the rules 
+		Content.drawString(g, options[2], 0, 90); //Display the rules 
 		Content.drawString(g, options[3], 5, 100); //Display the rules 
 		Content.drawString(g, options[4], 5, 110); //Display the rules 
 		Content.drawString(g, options[5], 5, 120); //Display the rules 
