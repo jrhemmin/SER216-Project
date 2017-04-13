@@ -205,9 +205,10 @@ public class TileMap {
 		colOffset = -this.x / tileSize;
 		rowOffset = -this.y / tileSize;
 		
-		if(x != xdest || y != ydest) moving = true;
-		else moving = false;
-		
+		if(x == xdest || y == ydest) {
+			moving = false;
+		}
+		else moving = true;
 	}
 	
 	public void draw(Graphics2D g) {
@@ -239,22 +240,3 @@ public class TileMap {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
