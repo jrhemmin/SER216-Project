@@ -46,7 +46,7 @@ public class Diamond extends Entity {
 		animation.update();
 	}
 	
-	public void draw(Graphics2D g) {
+	public void draw(final Graphics2D g) {
 		super.draw(g);
 	}
 	

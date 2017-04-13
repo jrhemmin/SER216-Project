@@ -106,15 +106,17 @@ public abstract class Entity {
 	// Returns whether or not the entity can
 	// move into the next position.
 	public boolean validateNextPosition() {
-		
-		if(moving) return true;
+		boolean indicator = true;
+		if(moving){
+			indicator = true;
+		}
 		
 		rowTile = y / tileSize;
 		colTile = x / tileSize;
 		
 		if(left) {
 			if(colTile == 0 || tileMap.getType(rowTile, colTile - 1) == Tile.BLOCKED) {
-				return false;
+			indicator = false;
 			}
 			else {
 				xdest = x - tileSize;
@@ -122,7 +124,7 @@ public abstract class Entity {
 		}
 		if(right) {
 			if(colTile == tileMap.getNumCols() || tileMap.getType(rowTile, colTile + 1) == Tile.BLOCKED) {
-				return false;
+				indicator = false;
 			}
 			else {
 				xdest = x + tileSize;
@@ -130,7 +132,7 @@ public abstract class Entity {
 		}
 		if(up) {
 			if(rowTile == 0 || tileMap.getType(rowTile - 1, colTile) == Tile.BLOCKED) {
-				return false;
+				indicator = false;
 			}
 			else {
 				ydest = y - tileSize;
@@ -138,15 +140,13 @@ public abstract class Entity {
 		}
 		if(down) {
 			if(rowTile == tileMap.getNumRows() - 1 || tileMap.getType(rowTile + 1, colTile) == Tile.BLOCKED) {
-				return false;
+				indicator = false;
 			}
 			else {
 				ydest = y + tileSize;
 			}
 		}
-		
-		return true;
-		
+	return indicator;
 	}
 	
 	// Calculates the destination coordinates.
