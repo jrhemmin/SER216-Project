@@ -16,17 +16,17 @@ public class Keys {
 	
 	public static final int NUM_KEYS = 8;
 	
-	public static boolean keyState[] = new boolean[NUM_KEYS];
-	public static boolean prevKeyState[] = new boolean[NUM_KEYS];
+	protected final static boolean keyState[] = new boolean[NUM_KEYS]; //changed to protected and final
+	protected final static boolean prevKeyState[] = new boolean[NUM_KEYS]; //changed to protected and final
 	
-	public static int UP = 0;
-	public static int LEFT = 1;
-	public static int DOWN = 2;
-	public static int RIGHT = 3;
-	public static int SPACE = 4;
-	public static int ENTER = 5;
-	public static int ESCAPE = 6;
-	public static int F1 = 7;
+	public final static int UP = 0; //changed to final
+	public final static int LEFT = 1; //changed to final
+	public final static int DOWN = 2; //changed to final
+	public final static int RIGHT = 3; //changed to final
+	public final static int SPACE = 4; //changed to final
+	public final static int ENTER = 5; //changed to final
+	public final static int ESCAPE = 6; //changed to final
+	public final static int F1 = 7; //changed to final
 	
 	public static void keySet(int i, boolean b) {
 		if(i == KeyEvent.VK_UP) keyState[UP] = b;
