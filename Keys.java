@@ -16,8 +16,8 @@ public class Keys {
 	
 	public static final int NUM_KEYS = 8;
 	
-	protected final static boolean keyState[] = new boolean[NUM_KEYS]; //changed to protected and final
-	protected final static boolean prevKeyState[] = new boolean[NUM_KEYS]; //changed to protected and final
+	public static boolean keyState[] = new boolean[NUM_KEYS]; 
+	public static boolean prevKeyState[] = new boolean[NUM_KEYS]; 
 	
 	public final static int UP = 0; //changed to final
 	public final static int LEFT = 1; //changed to final
