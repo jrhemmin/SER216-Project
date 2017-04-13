@@ -26,14 +26,14 @@ public class Player extends Entity {
 	private BufferedImage[] upBoatSprites;
 	
 	// animation
-	private final int DOWN = 0;
-	private final int LEFT = 1;
-	private final int RIGHT = 2;
-	private final int UP = 3;
-	private final int DOWNBOAT = 4;
-	private final int LEFTBOAT = 5;
-	private final int RIGHTBOAT = 6;
-	private final int UPBOAT = 7;
+	private static final int DOWN = 0; //changed the field to static
+	private static final int LEFT = 1;   //changed the field to static
+	private static final int RIGHT = 2;   //changed the field to static
+	private static final int UP = 3;   //changed the field to static
+	private static final int DOWNBOAT = 4;  //changed the field to static
+	private static final int LEFTBOAT = 5;  //changed the field to static
+	private static final int RIGHTBOAT = 6;  //changed the field to static
+	private static final int UPBOAT = 7;  //changed the field to static
 	
 	// gameplay
 	private int numDiamonds;
