@@ -18,7 +18,12 @@ public class MenuState extends GameState {
 	private int currentOption = 0;
 	private String[] options = {
 		"START",
-		"QUIT"
+		"QUIT",
+		"RULES:", // add rules
+		"Arrows to move",
+	    "Esc to pause",
+	    "Space for axe",
+	    "Axe bare trees",	
 	};
 	
 	public MenuState(GameStateManager gsm) {
@@ -40,11 +45,18 @@ public class MenuState extends GameState {
 		
 		g.drawImage(bg, 0, 0, null);
 		
-		Content.drawString(g, options[0], 44, 90);
-		Content.drawString(g, options[1], 48, 100);
+		Content.drawString(g, options[0], 44, 70);
+		Content.drawString(g, options[1], 48, 80);
+		Content.drawString(g, options[2], 5, 90); //Display the rules 
+		Content.drawString(g, options[3], 5, 100); //Display the rules 
+		Content.drawString(g, options[4], 5, 110); //Display the rules 
+		Content.drawString(g, options[5], 5, 120); //Display the rules 
+		Content.drawString(g, options[6], 5, 130); //Display the rules 
 		
-		if(currentOption == 0) g.drawImage(diamond, 25, 86, null);
-		else if(currentOption == 1) g.drawImage(diamond, 25, 96, null);
+		
+		if(currentOption == 0) g.drawImage(diamond, 25, 66, null);
+		else if(currentOption == 1) g.drawImage(diamond, 25, 76, null);
+		
 		
 	}
 	
@@ -71,5 +83,4 @@ public class MenuState extends GameState {
 			System.exit(0);
 		}
 	}
-	
 }
