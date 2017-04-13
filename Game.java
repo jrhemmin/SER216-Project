@@ -29,7 +29,7 @@ public class Game {
 		JMenuItem score = new JMenuItem("Scoring"); //adding scoring menu
 		mb.add(score);
 		mb.add(menu);
-		menu.addActionListener(new ActionListener() { 
+		menu.addActionListener(new ActionListener() {  
 			public void actionPerformed(ActionEvent ev){
 				
 				JFrame helpWindow = new JFrame("Help");
