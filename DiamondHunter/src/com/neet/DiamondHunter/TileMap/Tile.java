@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 public class Tile {
 	
-	private BufferedImage image;
+	final private BufferedImage image;
 	private int type;
 	
 	// tile types
