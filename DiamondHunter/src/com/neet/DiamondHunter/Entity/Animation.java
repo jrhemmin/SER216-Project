@@ -11,7 +11,6 @@ public class Animation {
 	private BufferedImage[] frames;
 	private int currentFrame;
 	private int numFrames;
-	
 	private int count;
 	private int delay;
 	

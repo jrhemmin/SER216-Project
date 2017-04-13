@@ -6,8 +6,12 @@
 package com.neet.DiamondHunter.Main;
 
 import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.MenuBar;
+import java.awt.MenuItem;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Menu;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
@@ -95,9 +99,12 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	// initializes fields
 	private void init() {
 		running = true;
+		
 		image = new BufferedImage(WIDTH, HEIGHT2, 1);
 		g = (Graphics2D) image.getGraphics();
+		
 		gsm = new GameStateManager();
+		
 	}
 	
 	// updates game
