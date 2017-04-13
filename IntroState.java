@@ -19,9 +19,9 @@ public class IntroState extends GameState {
 	private int alpha;
 	private int ticks;
 	
-	private final int FADE_IN = 60;
-	private final int LENGTH = 60;
-	private final int FADE_OUT = 60;
+	private static final int FADE_IN = 60; //changed the field to static
+	private static final int LENGTH = 60; //changed the field to static
+	private static final int FADE_OUT = 60; //changed the field to static
 	
 	public IntroState(GameStateManager gsm) {
 		super(gsm);
