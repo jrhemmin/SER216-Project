@@ -45,7 +45,7 @@ public class Game {
 					
 				label.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 				helpWindow.add(label, BorderLayout.NORTH);
-				helpWindow.setSize(new Dimension(500,500));
+				helpWindow.setSize(new Dimension(500,350));
 				helpWindow.setVisible(true);
 			}
 		});
@@ -61,9 +61,9 @@ public class Game {
 						+ " Bumbling Idiot: Over 4 Minutes </html>");
 
 				
-				label1.setFont(new Font("TimesRoman",Font.ROMAN_BASELINE, 20));
+				label1.setFont(new Font("TimesRoman",Font.PLAIN, 20));
 				scoreWindow.add(label1, BorderLayout.NORTH);
-				scoreWindow.setSize(new Dimension(300,400));
+				scoreWindow.setSize(new Dimension(300,200));
 				scoreWindow.setVisible(true);
 			}
 			
