@@ -38,7 +38,10 @@ public class GameOverState extends GameState {
 		else if(ticks < 7200) rank = 3;
 		else rank = 4;
 	}
-	public void update() {}
+	
+	public void update() {
+		handleInput();
+	}
 	
 	public void draw(Graphics2D g) {
 		
@@ -65,11 +68,10 @@ public class GameOverState extends GameState {
 		else if(rank == 4) Content.drawString(g, "bumbling idiot", 8, 78);
 		
 		Content.drawString(g, "press any key", 12, 110);
-		
 	}
 	
 	public void handleInput() {
-		if(Keys.isPressed(Keys.ENTER)) {
+		if(Keys.anyKeyPress()){
 			gsm.setState(GameStateManager.MENU);
 			JukeBox.play("collect");
 		}
