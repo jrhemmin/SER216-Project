@@ -7,6 +7,7 @@ package com.neet.DiamondHunter.TileMap;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -91,12 +92,13 @@ public class TileMap {
 		
 	}
 	
-	public void loadMap(String s) {
-		
+	public void loadMap(String s) throws IOException {
+		InputStream in = null;
+        BufferedReader br = null;
 		try {
 			
-			InputStream in = getClass().getResourceAsStream(s);
-			BufferedReader br = new BufferedReader(
+			in = getClass().getResourceAsStream(s);
+			br = new BufferedReader(
 						new InputStreamReader(in)
 					);
 			
@@ -106,17 +108,21 @@ public class TileMap {
 			width = numCols * tileSize;
 			height = numRows * tileSize;
 			
-			xmin = GamePanel.WIDTH - width;
-			xmax = 0; //removed xmin = -width
-			ymin = GamePanel.HEIGHT - height;
-			ymax = 0; //removed ymin = -height
+			//xmin = GamePanel.WIDTH - width;
+			xmin = -width;
+			xmax = 0;
+			//ymin = GamePanel.HEIGHT - height;
+			ymin = -height;
+			ymax = 0;
 			
 			String delims = "\\s+";
 			for(int row = 0; row < numRows; row++) {
 				String line = br.readLine();
-				String[] tokens = line.split(delims);
-				for(int col = 0; col < numCols; col++) {
-					map[row][col] = Integer.parseInt(tokens[col]);
+				if(line != null){
+					String[] tokens = line.split(delims);
+					for(int col = 0; col < numCols; col++) {
+						map[row][col] = Integer.parseInt(tokens[col]);
+					}
 				}
 			}
 			
@@ -124,7 +130,14 @@ public class TileMap {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+		finally {
+            if (in != null) {
+                in.close();
+            }
+            if (br != null) {
+                br.close();
+            }
+        }
 	}
 	
 	public int getTileSize() { return tileSize; }
