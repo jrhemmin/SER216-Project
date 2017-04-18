@@ -35,12 +35,12 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	// game loop stuff
 	private Thread thread;
 	private boolean running;
-	private final int FPS = 30;
+	private final static int FPS = 30;
 	private final int TARGET_TIME = 1000 / FPS;
 	
 	// drawing stuff
 	private BufferedImage image;
-	private Graphics2D g;
+	private Graphics2D graphic;
 	
 	// game state manager
 	private GameStateManager gsm;
@@ -101,7 +101,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		running = true;
 		
 		image = new BufferedImage(WIDTH, HEIGHT2, 1);
-		g = (Graphics2D) image.getGraphics();
+		graphic = (Graphics2D) image.getGraphics();
 		
 		gsm = new GameStateManager();
 		
@@ -115,27 +115,27 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	
 	// draws game
 	private void draw() {
-		gsm.draw(g);
+		gsm.draw(graphic);
 	}
 	
 	// copy buffer to screen
 	private void drawToScreen() {
-		Graphics g2 = getGraphics();
-		g2.drawImage(image, 0, 0, WIDTH * SCALE, HEIGHT2 * SCALE, null);
-		g2.dispose();
+		final Graphics graphic2 = getGraphics();
+		graphic2.drawImage(image, 0, 0, WIDTH * SCALE, HEIGHT2 * SCALE, null);
+		graphic2.dispose();
 	}
 	
 	// key event
 	
-	public void keyPressed(KeyEvent key) {
+	public void keyPressed(final KeyEvent key) {
 		Keys.keySet(key.getKeyCode(), true);
 	}
-	public void keyReleased(KeyEvent key) {
+	public void keyReleased(final KeyEvent key) {
 		Keys.keySet(key.getKeyCode(), false);
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
+	public void keyTyped(final KeyEvent e) {
 		Keys.keySet(e.getKeyCode(), false);
 		
 	}

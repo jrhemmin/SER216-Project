@@ -23,16 +23,16 @@ public class Game {
 	
 	public static void main(String[] args) {
 		
-		JFrame window = new JFrame("Diamond Hunter");
-		JMenuBar mb = new JMenuBar();
-		JMenuItem menu = new JMenuItem("Help");
-		mb.add(menu);
+		final JFrame window = new JFrame("Diamond Hunter");
+		final JMenuBar menuBar = new JMenuBar();
+		final JMenuItem menu = new JMenuItem("Help");
+		menuBar.add(menu);
 		menu.addActionListener(new ActionListener() { 
-			public void actionPerformed(ActionEvent ev){
+			public void actionPerformed(final ActionEvent event){
 				
-				JFrame helpWindow = new JFrame("Help");
+				final JFrame helpWindow = new JFrame("Help");
 				
-				JLabel label = new JLabel("<html> Welcome to Diamond Hunter!<br><br> "
+				final JLabel label = new JLabel("<html> Welcome to Diamond Hunter!<br><br> "
 						+ " After clicking start, navigate the map with your arrow keys"
 						+ " (up, down, left, right). <br><br>When you encounter obstacles such"
 						+ " as trees, you can use the axe to cut the tree down (if you"
@@ -50,7 +50,7 @@ public class Game {
 		});
 
 		window.add(new GamePanel());
-		window.add(mb, BorderLayout.NORTH);
+		window.add(menuBar, BorderLayout.NORTH);
 
 		window.setResizable(false);
 		window.pack();
