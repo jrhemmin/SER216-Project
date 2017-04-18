@@ -39,6 +39,7 @@ public class Game {
 						+ " (up, down, left, right). <br><br>When you encounter obstacles such"
 						+ " as trees, you can use the axe to cut the tree down (if you"
 						+ " have collected the axe) by pressing the space bar. <br><br>"
+					  	+ " To pause, use the escape key. <br><br>" #added how to pause
 						+ " The objective is to collect all 15 Diamonds. <br><br> "
 						+ " Good Luck!</html>");
 					
