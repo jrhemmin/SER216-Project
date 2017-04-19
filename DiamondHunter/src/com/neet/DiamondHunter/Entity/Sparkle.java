@@ -10,7 +10,7 @@ import com.neet.DiamondHunter.TileMap.TileMap;
 
 public class Sparkle extends Entity {
 	
-	private boolean remove;
+	private static boolean remove;
 	
 	public Sparkle(TileMap tm) {
 		super(tm);
@@ -19,7 +19,7 @@ public class Sparkle extends Entity {
 		width = height = 16;
 	}
 	
-	public boolean shouldRemove() {
+	public static boolean shouldRemove() {
 		return remove;
 	}
 	

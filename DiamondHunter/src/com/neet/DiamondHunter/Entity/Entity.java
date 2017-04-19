@@ -14,7 +14,7 @@ public abstract class Entity {
 	
 	// dimensions
 	protected int width;
-	protected int height;
+	static protected int height;
 	protected int cwidth;
 	protected int cheight;
 	

@@ -36,12 +36,12 @@ public class Player extends Entity {
 	private final int UPBOAT = 7;
 	
 	// gameplay
-	private int numDiamonds;
-	private int totalDiamonds;
-	private boolean hasBoat;
-	private boolean hasAxe;
+	static int numDiamonds;
+	static int totalDiamonds;
+	static boolean hasBoat;
+	static boolean hasAxe;
 	private boolean onWater;
-	private long ticks;
+	static long ticks;
 	
 	public Player(TileMap tm) {
 		
@@ -76,18 +76,21 @@ public class Player extends Entity {
 		animation.setDelay(d);
 	}
 	
-	public void collectedDiamond() { numDiamonds++; }
-	public int numDiamonds() { return numDiamonds; }
-	public int getTotalDiamonds() { return totalDiamonds; }
-	public void setTotalDiamonds(int i) { totalDiamonds = i; }
+	public static void collectedDiamond() { numDiamonds++; }
+	
+	public int numDiamonds() { 
+		return numDiamonds; 
+		}
+	public static int getTotalDiamonds() { return totalDiamonds; }
+	public static void setTotalDiamonds(int i) { totalDiamonds = i; }
 	
 	public void gotBoat() { hasBoat = true; tileMap.replace(22, 4); }
-	public void gotAxe() { hasAxe = true; }
+	public static void gotAxe() { hasAxe = true; }
 	public boolean hasBoat() { return hasBoat; }
 	public boolean hasAxe() { return hasAxe; }
 	
 	// Used to update time.
-	public long getTicks() { return ticks; }
+	public static long getTicks() { return ticks; }
 	
 	// Keyboard input. Moves the player.
 	public void setDown() {
