@@ -119,7 +119,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	}
 	
 	// key event
-	public void keyTyped(KeyEvent key) {}
 	public void keyPressed(KeyEvent key) {
 		Keys.keySet(key.getKeyCode(), true);
 	}
@@ -127,4 +126,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		Keys.keySet(key.getKeyCode(), false);
 	}
 	
+	@Override
+	public void keyTyped(KeyEvent e) {
+		Keys.keySet(e.getKeyCode(), false);
+	}
 }
