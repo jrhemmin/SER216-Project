@@ -32,20 +32,20 @@ public class Game {
 		menu.addActionListener(new ActionListener() {  
 			public void actionPerformed(ActionEvent ev){
 				
-				JFrame helpWindow = new JFrame("Help");
+				JFrame helpWindow = new JFrame("Help"); 
 				
 				JLabel label = new JLabel("<html> Welcome to Diamond Hunter!<br><br> "
 						+ " After clicking start, navigate the map with your arrow keys"
 						+ " (up, down, left, right). <br><br>When you encounter obstacles such"
 						+ " as trees, you can use the axe to cut the tree down (if you"
 						+ " have collected the axe) by pressing the space bar. <br><br>"
-					  	+ " To pause, use the escape key. <br><br>" #added how to pause
 						+ " The objective is to collect all 15 Diamonds. <br><br> "
+						+ " To pause, use the escape key. <br><br>"
 						+ " Good Luck!</html>");
 					
 				label.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 				helpWindow.add(label, BorderLayout.NORTH);
-				helpWindow.setSize(new Dimension(500,350));
+				helpWindow.setSize(new Dimension(500,350)); //size of the box, width by height
 				helpWindow.setVisible(true);
 			}
 		});
@@ -54,7 +54,7 @@ public class Game {
 				public void actionPerformed(ActionEvent ev){
 				JFrame scoreWindow = new JFrame("Scoring");
 				
-				JLabel label1 = new JLabel("<html> Scoring Ranks:<br><br>" 
+				JLabel label1 = new JLabel("<html><br> Scoring Ranks:<br><br>" 
 						+ " Speed Demon: Under 2 Minutes <br>"
 						+ " Adventurer: Under 3 Minutes <br>"
 						+ " Beginner: Under 4 Minutes <br>"
@@ -63,7 +63,7 @@ public class Game {
 				
 				label1.setFont(new Font("TimesRoman",Font.PLAIN, 20));
 				scoreWindow.add(label1, BorderLayout.NORTH);
-				scoreWindow.setSize(new Dimension(300,200));
+				scoreWindow.setSize(new Dimension(300,200)); //size of the box, width by height
 				scoreWindow.setVisible(true);
 			}
 			
@@ -77,7 +77,7 @@ public class Game {
 		
 		window.setLocationRelativeTo(null);
 		window.setVisible(true);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
 	

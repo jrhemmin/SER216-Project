@@ -44,7 +44,7 @@ public class Player extends Entity {
 	private long ticks;
 	
 	public Player(TileMap tm) {
-		
+		 
 		super(tm);
 		
 		width = 16;

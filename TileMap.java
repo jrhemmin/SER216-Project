@@ -24,7 +24,7 @@ public class TileMap {
 	private int ydest;
 	private int speed;
 	private boolean moving;
-	
+	 
 	// bounds
 	private int xmin;
 	private int ymin;

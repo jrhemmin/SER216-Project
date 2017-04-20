@@ -11,3 +11,4 @@ public class Data {
 	public static long getTime() { return time; }
 	
 }
+ 

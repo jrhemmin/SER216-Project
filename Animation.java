@@ -22,11 +22,11 @@ public class Animation {
 	}
 	
 	public void setFrames(BufferedImage[] frames) {
-		this.frames = frames;
-		currentFrame = 0;
+		this.frames = frames; 
+		currentFrame = 0;  
 		count = 0;
 		timesPlayed = 0;
-		delay = 2;
+		delay = 2;  
 		numFrames = frames.length;
 	}
 	
@@ -36,12 +36,12 @@ public class Animation {
 	
 	public void update() {
 		
-		if(delay == -1) return;
-		
-		count++;
+		if(delay == -1) return; 
+		 
+		count++; 
 		
 		if(count == delay) {
-			currentFrame++;
+			currentFrame++; 
 			count = 0;
 		}
 		if(currentFrame == numFrames) {
@@ -49,12 +49,12 @@ public class Animation {
 			timesPlayed++;
 		}
 		
-	}
+	} 
 	
 	public int getFrame() { return currentFrame; }
 	public int getCount() { return count; }
-	public BufferedImage getImage() { return frames[currentFrame]; }
+	public BufferedImage getImage() { return frames[currentFrame]; } 
 	public boolean hasPlayedOnce() { return timesPlayed > 0; }
-	public boolean hasPlayed(int i) { return timesPlayed == i; }
+	public boolean hasPlayed(int i) { return timesPlayed == i; } 
 	
 }

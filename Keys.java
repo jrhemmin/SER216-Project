@@ -16,8 +16,8 @@ public class Keys {
 	
 	public static final int NUM_KEYS = 8;
 	
-	public static boolean keyState[] = new boolean[NUM_KEYS]; 
-	public static boolean prevKeyState[] = new boolean[NUM_KEYS]; 
+	public static boolean keyState[] = new boolean[NUM_KEYS];
+	public static boolean prevKeyState[] = new boolean[NUM_KEYS];
 	
 	public final static int UP = 0; //changed to final
 	public final static int LEFT = 1; //changed to final
@@ -31,7 +31,7 @@ public class Keys {
 	public static void keySet(int i, boolean b) {
 		if(i == KeyEvent.VK_UP) keyState[UP] = b;
 		else if(i == KeyEvent.VK_LEFT) keyState[LEFT] = b;
-		else if(i == KeyEvent.VK_DOWN) keyState[DOWN] = b;
+		else if(i == KeyEvent.VK_DOWN) keyState[DOWN] = b; 
 		else if(i == KeyEvent.VK_RIGHT) keyState[RIGHT] = b;
 		else if(i == KeyEvent.VK_SPACE) keyState[SPACE] = b;
 		else if(i == KeyEvent.VK_ENTER) keyState[ENTER] = b;

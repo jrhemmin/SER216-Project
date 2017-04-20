@@ -35,15 +35,23 @@ public class Item extends Entity{
 		}
 	}
 	
-	public void collected(Player p) {
+	public void collected(Player player) {
 		if(type == BOAT) {
-			p.gotBoat();
+			player.gotBoat();
 		}
 		if(type == AXE) {
-			p.gotAxe();
+			player.gotAxe();
 		}
 	}
-	
+	public void collected(Player2 player2) {
+		if(type == BOAT) {
+			player2.gotBoat2();
+		}
+		if(type == AXE) {
+			player2.gotAxe2()
+			; 
+		}
+	}
 	public void draw(Graphics2D g) {
 		setMapPosition();
 		g.drawImage(sprite, x + xmap - width / 2, y + ymap - height / 2, null);
