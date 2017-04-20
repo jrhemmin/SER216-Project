@@ -8,6 +8,7 @@ package com.neet.DiamondHunter.GameState;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.Random;
 
 import com.neet.DiamondHunter.Entity.Diamond;
 import com.neet.DiamondHunter.Entity.Item;
@@ -171,19 +172,28 @@ public class PlayState extends GameState {
 	}
 	
 	private void populateItems() {
-		
+		Random rand = new Random();
 		Item item;
-		
+		// Note, the co-ordinates for valid positions of boat
+		// and axe are obtained by running game and taking
+		// co-ordinates of the valid positions at which
+		// boat and axe can be placed
+		int [] axe_pos_x = {18, 26, 29, 28, 20, 18, 12, 29};
+		int [] axe_pos_y = {18, 20, 28, 34, 28, 36, 35, 14};
+		int [] boat_pos_x = {12, 9, 13, 30, 25, 13, 17};
+		int [] boat_pos_y = {4, 9, 5, 21, 28, 25, 27};
+		int ind = rand.nextInt(7);
+
 		item = new Item(tileMap);
 		item.setType(Item.AXE);
-		item.setTilePosition(26, 37);
+		item.setTilePosition(axe_pos_x[ind], axe_pos_y[ind]);
 		items.add(item);
 		
+		ind = rand.nextInt(7);
 		item = new Item(tileMap);
 		item.setType(Item.BOAT);
-		item.setTilePosition(12, 4);
-		items.add(item);
-		
+		item.setTilePosition(boat_pos_x[ind], boat_pos_y[ind]);
+		items.add(item);	
 	}
 	
 	public void update() {
