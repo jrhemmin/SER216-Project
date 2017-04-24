@@ -62,39 +62,64 @@ public class EntityTest {
 	public void testSetLeft() {
 		assertTrue(Entity.moving == false);
 		assertTrue(Entity.left == false);
+		assertFalse(Entity.moving == true);
+		assertFalse(Entity.left == true);
 	}
 
 	@Test
 	public void testSetRight() {
 		assertTrue(Entity.moving == false);
 		assertTrue(Entity.right == false);
+		assertFalse(Entity.moving == true);
+		assertFalse(Entity.right == true);
 	}
 
 	@Test
 	public void testSetUp() {
 		assertTrue(Entity.moving == false);
 		assertTrue(Entity.up == false);
+		assertFalse(Entity.moving == true);
+		assertFalse(Entity.up == true);
 	}
 
 	@Test
 	public void testSetDown() {
 		assertTrue(Entity.moving == false);
 		assertTrue(Entity.down == false);
+		assertFalse(Entity.moving == true);
+		assertFalse(Entity.down == true);
 	}
 
 	@Test
 	public void testValidateNextPosition() {
-
+		assertTrue(Entity.moving == false);
+		assertTrue(Entity.up == false);
+		assertTrue(Entity.down == false);
+		assertTrue(Entity.left == false);
+		assertTrue(Entity.right == false);
+		assertFalse(Entity.moving == true);
+		assertFalse(Entity.up == true);
+		assertFalse(Entity.down == true);
+		assertFalse(Entity.left == true);
+		assertFalse(Entity.right == true);
 	}
 
 	@Test
 	public void testGetNextPosition() {
-		fail("Not yet implemented"); // TODO
+		assertTrue(Entity.left == false);
+		assertTrue(Entity.right == false);
+		assertTrue(Entity.up == false);
+		assertTrue(Entity.down == false);
+		assertFalse(Entity.left == true);
+		assertFalse(Entity.right == true);
+		assertFalse(Entity.up == true);
+		assertFalse(Entity.down == true);
 	}
 
 	@Test
 	public void testUpdate() {
-		fail("Not yet implemented"); // TODO
+		assertTrue(Entity.moving == false);
+		assertFalse(Entity.moving == true);
 	}
 
 }

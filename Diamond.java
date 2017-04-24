@@ -14,7 +14,7 @@ import com.neet.DiamondHunter.TileMap.TileMap;
 
 public class Diamond extends Entity {
 	
-	BufferedImage[] sprites;
+	private BufferedImage[] sprites;
 	
 	private ArrayList<int[]> tileChanges;
 	
