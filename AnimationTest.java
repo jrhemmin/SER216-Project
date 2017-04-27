@@ -1,10 +1,12 @@
-package com.neet.DiamondHunter.Entity;
+package com.neet.DiamondHunter.JUnit;
 
 import static org.junit.Assert.*;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.neet.DiamondHunter.Entity.Animation;
 
 public class AnimationTest {
 

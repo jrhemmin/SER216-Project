@@ -40,7 +40,7 @@ public abstract class Entity {
 	protected TileMap tileMap;
 	protected int tileSize;
 	protected int xmap;
-	protected int ymap;
+	protected static int ymap;
 	
 	// animation
 	protected Animation animation;

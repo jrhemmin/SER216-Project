@@ -1,4 +1,4 @@
-package com.neet.DiamondHunter.Entity;
+package com.neet.DiamondHunter.JUnit;
 
 
 import java.awt.Graphics;

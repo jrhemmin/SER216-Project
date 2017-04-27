@@ -41,7 +41,7 @@ public class Player extends Entity {
 	private boolean hasBoat;
 	private boolean hasAxe;
 	private boolean onWater;
-	private long ticks;
+    private long ticks;
 	
 	public Player(TileMap tm) {
 		 

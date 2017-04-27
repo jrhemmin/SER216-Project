@@ -11,6 +11,7 @@ package com.neet.DiamondHunter.GameState;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 import com.neet.DiamondHunter.Main.GamePanel;
 import com.neet.DiamondHunter.Manager.Content;
@@ -23,6 +24,9 @@ public class GameOverState extends GameState {
 	
 	private Color color;
 	
+	private BufferedImage diamond; // added diamond image
+	
+	
 	private int rank;
 	private long ticks;
 	
@@ -31,6 +35,7 @@ public class GameOverState extends GameState {
 	}
 	
 	public void init() {
+		diamond = Content.DIAMOND[0][0]; // added diamond
 		color = new Color(164, 198, 222);
 		ticks = Data.getTime();
 		if(ticks < 3600) rank = 1;
@@ -39,7 +44,15 @@ public class GameOverState extends GameState {
 		else rank = 4;
 	}
 	
-	public void update() {}
+	private int currentOption = 0;
+	private String[] options =  // added options menu to be 
+		{ "Level 2", //able to change maps
+			"Quit",
+				};
+	
+	public void update() {
+		handleInput();
+	}
 	
 	public void draw(Graphics2D g) {
 		
@@ -65,15 +78,43 @@ public class GameOverState extends GameState {
 		else if(rank == 3) Content.drawString(g, "beginner", 32, 78);
 		else if(rank == 4) Content.drawString(g, "bumbling idiot", 8, 78);
 		
-		Content.drawString(g, "press any key", 12, 110);
+		Content.drawString(g, options[0] ,25, 110); //draw lettering for options
+		Content.drawString(g, options[1] ,25, 120);
+		
+		if(currentOption == 0) g.drawImage(diamond, 10, 108, null); //draw diamond
+		if(currentOption == 1) g.drawImage(diamond, 10, 118, null);
+	}
+	public void handleInput() { //handle the key inputs
+		if(Keys.isPressed(Keys.DOWN) && currentOption < options.length -1)
+		{
+			JukeBox.play("menuoption");
+			currentOption++;
+		}
+		if(Keys.isPressed(Keys.UP) && currentOption > 0)
+		{
+			JukeBox.play("menuoption");
+			currentOption--;
+		}
+		if(Keys.isPressed(Keys.ENTER))
+		{
+			JukeBox.play("collect");
+			selectOption();
+		}
+	}
+
+	
+	private void selectOption() //handle the selections from the menu
+	{
+		if(currentOption == 0)
+		{
+			gsm.setState(GameStateManager.LEVEL_2);
+		}
+		if(currentOption == 1)
+		{
+			System.exit(1);
+		}
 		
 	}
 	
-	public void handleInput() {
-		if(Keys.isPressed(Keys.ENTER)) {
-			gsm.setState(GameStateManager.MENU);
-			JukeBox.play("collect");
-		}
-	}
 	
 }

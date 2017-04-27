@@ -19,7 +19,7 @@ public class Diamond extends Entity {
 	private ArrayList<int[]> tileChanges;
 	
 	public Diamond(TileMap tm) {
-		
+
 		super(tm);
 		
 		width = 16;

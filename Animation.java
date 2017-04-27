@@ -18,7 +18,7 @@ public class Animation {
 	private int timesPlayed;
 	
 	public Animation() {
-		timesPlayed = 0;
+		timesPlayed = 0; 
 	}
 	
 	public void setFrames(BufferedImage[] frames) {
