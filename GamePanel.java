@@ -31,7 +31,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	// game loop stuff
 	private Thread thread;
 	private boolean running;
-	private static final int FPS = 30; //added static modifier
+	private static final int FPS = 50; //added static modifier sped up frames per second to get time right
 	private static final int TARGET_TIME = 1000 / FPS; //added static modifier
 	
 	// drawing stuff
