@@ -16,7 +16,7 @@ import javax.sound.sampled.FloatControl;
 
 public class JukeBox {
 	
-	private static HashMap<String, Clip> clips;
+	public static HashMap<String, Clip> clips;
 	private static int gap;
 	
 	// Creates new clips HashMap.

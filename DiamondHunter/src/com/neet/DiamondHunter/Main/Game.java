@@ -19,18 +19,46 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import com.neet.DiamondHunter.Manager.JukeBox;
+
 public class Game {
-	
+	public static boolean enabled = true;
 	public static void main(String[] args) {
-		
 		final JFrame window = new JFrame("Diamond Hunter");
 		final JMenuBar menuBar = new JMenuBar();
 		final JMenuItem menu = new JMenuItem("Help");
+		final JMenuItem music = new JMenuItem("Music On");
 		menuBar.add(menu);
+		menuBar.add(music);
+		
+		music.addActionListener(new ActionListener() { 
+			public void actionPerformed(final ActionEvent event){
+			
+				
+			
+				if(enabled == true){
+				JukeBox.setVolume("music1", -80);
+				music.setText("Music off");
+				enabled = false;
+				}
+				
+				else{
+					JukeBox.setVolume("music1", -10);
+
+					music.setText("Music on");
+					enabled = true;
+				}
+				
+			}
+			
+		});
+		
+		
 		menu.addActionListener(new ActionListener() { 
 			public void actionPerformed(final ActionEvent event){
 				
 				final JFrame helpWindow = new JFrame("Help");
+			
 				
 				final JLabel label = new JLabel("<html> Welcome to Diamond Hunter!<br><br> "
 						+ " After clicking start, navigate the map with your arrow keys"
